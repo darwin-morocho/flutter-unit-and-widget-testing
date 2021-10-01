@@ -11,4 +11,5 @@ class Routes {
   static const CONTENT_NOT_VISIBLE = "/content-not-visible";
   static const SLIDABLE = "/slidable";
   static const TABS = "/tabs";
+  static const DROPDOWN = "/dropdown";
 }

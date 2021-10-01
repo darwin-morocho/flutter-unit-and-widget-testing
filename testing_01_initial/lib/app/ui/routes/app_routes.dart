@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../pages/dropdown_page.dart';
 import '../pages/tabs_page.dart';
 import '../pages/slidable_page.dart';
 import '../pages/content_not_visible_page.dart';
@@ -19,5 +20,6 @@ Map<String, Widget Function(BuildContext)> get appRoutes {
     Routes.CONTENT_NOT_VISIBLE: (_) => const ContentNotVisiblePage(),
     Routes.SLIDABLE: (_) => const SlidablePage(),
     Routes.TABS: (_) => const TabsPage(),
+    Routes.DROPDOWN: (_) => const DropdownPage(),
   };
 }
