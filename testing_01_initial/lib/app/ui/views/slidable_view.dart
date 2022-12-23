@@ -38,9 +38,10 @@ class _SlidableViewState extends State<SlidableView> {
               children: [
                 SlidableAction(
                   label: 'Delete',
+                  autoClose: false,
                   backgroundColor: Colors.redAccent,
                   icon: Icons.delete_outline,
-                  onPressed: (_) {
+                  onPressed: (context) {
                     Slidable.of(context)?.dismiss(
                       ResizeRequest(
                         const Duration(milliseconds: 300),
