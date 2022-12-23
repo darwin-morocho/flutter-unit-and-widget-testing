@@ -2,10 +2,10 @@
 
 import 'package:flutter/material.dart';
 
-import '../../utils/validator.dart';
 import '../dialogs/dialogs.dart';
 import '../dialogs/show_loader.dart';
 import '../routes/routes.dart';
+import '../utils/validator.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});

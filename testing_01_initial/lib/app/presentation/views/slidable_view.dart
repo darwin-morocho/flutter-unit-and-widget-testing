@@ -24,7 +24,9 @@ class _SlidableViewState extends State<SlidableView> {
     return Scaffold(
       appBar: AppBar(),
       body: ListView.separated(
-        separatorBuilder: (_, __) => const Divider(height: 1),
+        separatorBuilder: (_, __) => const Divider(
+          height: 1,
+        ),
         itemBuilder: (_, index) {
           final country = _countries[index];
 

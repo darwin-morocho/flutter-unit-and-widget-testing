@@ -12,7 +12,9 @@ Future<void> showAlertDialog(
       content: Text(message),
       actions: [
         TextButton(
-          onPressed: () => Navigator.pop(context),
+          onPressed: () => Navigator.pop(
+            context,
+          ),
           child: const Text('OK'),
         )
       ],
@@ -32,11 +34,16 @@ Future<bool> showConfirmDialog(
       content: Text(message),
       actions: [
         TextButton(
-          onPressed: () => Navigator.pop(context, true),
+          onPressed: () => Navigator.pop(
+            context,
+            true,
+          ),
           child: const Text('Yes'),
         ),
         TextButton(
-          onPressed: () => Navigator.pop(context),
+          onPressed: () => Navigator.pop(
+            context,
+          ),
           child: const Text('No'),
         ),
       ],

@@ -11,7 +11,7 @@ import '../views/slidable_view.dart';
 import '../views/tabs_view.dart';
 import 'routes.dart';
 
-Map<String, Widget Function(BuildContext)> get appRoutes {
+Map<String, WidgetBuilder> get appRoutes {
   return {
     Routes.COUNTER: (_) => const CounterView(),
     Routes.PLATFORM_WIDGETS: (_) => const PlatformWidgetsView(),
