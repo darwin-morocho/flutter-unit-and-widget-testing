@@ -1,30 +1,19 @@
 import 'package:flutter/material.dart';
+
 import 'ui/routes/app_routes.dart';
+import 'ui/views/menu_view.dart';
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Flutter testing',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Builder(
-        builder: (context) => Scaffold(
-          body: ListView(
-            children: appRoutes.keys
-                .map(
-                  (key) => ListTile(
-                    title: Text(key),
-                    onTap: () => Navigator.pushNamed(context, key),
-                  ),
-                )
-                .toList(),
-          ),
-        ),
-      ),
+      home: const MenuView(),
       routes: appRoutes,
     );
   }

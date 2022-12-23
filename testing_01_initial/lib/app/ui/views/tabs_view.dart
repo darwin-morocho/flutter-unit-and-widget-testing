@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class TabsPage extends StatelessWidget {
-  const TabsPage({Key? key}) : super(key: key);
+class TabsView extends StatelessWidget {
+  const TabsView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -9,8 +9,8 @@ class TabsPage extends StatelessWidget {
       length: 3,
       child: Scaffold(
         appBar: AppBar(
-          // ignore: prefer_const_literals_to_create_immutables
           bottom: const TabBar(
+            labelStyle: TextStyle(fontSize: 20),
             tabs: [
               Tab(text: '1'),
               Tab(text: '2'),
@@ -21,13 +21,22 @@ class TabsPage extends StatelessWidget {
         body: const TabBarView(
           children: [
             Center(
-              child: Text("1"),
+              child: Text(
+                'content 1',
+                style: TextStyle(fontSize: 24),
+              ),
             ),
             Center(
-              child: Text("2"),
+              child: Text(
+                'content 2',
+                style: TextStyle(fontSize: 24),
+              ),
             ),
             Center(
-              child: Text("3"),
+              child: Text(
+                'content 3',
+                style: TextStyle(fontSize: 24),
+              ),
             ),
           ],
         ),

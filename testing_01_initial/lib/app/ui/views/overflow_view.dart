@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
-class OverflowPage extends StatelessWidget {
-  const OverflowPage({Key? key}) : super(key: key);
+class OverflowView extends StatelessWidget {
+  const OverflowView({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(),
       body: SafeArea(
         child: SizedBox(
           width: double.infinity,
@@ -16,7 +17,8 @@ class OverflowPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: const [
                   Text(
-                    "This is a flutter course",
+                    'This is a flutter course. Add more text to '
+                    'force an overflow error',
                     style: TextStyle(fontSize: 18),
                   ),
                   SizedBox(width: 30),

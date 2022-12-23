@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_unit_and_widget_testing/app/ui/dialogs/dialogs.dart';
 
-class ContentNotVisiblePage extends StatelessWidget {
-  const ContentNotVisiblePage({Key? key}) : super(key: key);
+import '../dialogs/dialogs.dart';
+
+class ContentNotVisibleView extends StatelessWidget {
+  const ContentNotVisibleView({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(),
       body: ListView(
         children: [
           ...Colors.primaries.map(
@@ -17,9 +19,15 @@ class ContentNotVisiblePage extends StatelessWidget {
           ),
           ElevatedButton(
             onPressed: () {
-              Dialogs.alert(context, message: "GREAT COURSE");
+              showAlertDialog(
+                context,
+                message: 'AMAZING COURSE',
+              );
             },
-            child: const Text("show message"),
+            child: const Text(
+              'show message',
+              style: TextStyle(fontSize: 20),
+            ),
           ),
         ],
       ),

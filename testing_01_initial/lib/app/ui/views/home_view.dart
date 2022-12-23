@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_unit_and_widget_testing/app/ui/dialogs/dialogs.dart';
-import 'package:flutter_unit_and_widget_testing/app/ui/routes/routes.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+import '../dialogs/dialogs.dart';
+import '../routes/routes.dart';
 
+class HomeView extends StatefulWidget {
+  const HomeView({super.key});
+
+  @override
+  State<HomeView> createState() => _HomeViewState();
+}
+
+class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,7 +24,7 @@ class HomePage extends StatelessWidget {
       ),
       body: const Center(
         child: Text(
-          "home page",
+          'home page',
           style: TextStyle(fontSize: 20),
         ),
       ),
@@ -26,8 +32,8 @@ class HomePage extends StatelessWidget {
   }
 
   void _logout(BuildContext context) async {
-    final yes = await Dialogs.confirm(context);
-    if (yes) {
+    final yes = await showConfirmDialog(context);
+    if (yes && mounted) {
       /// pop all routes and then go to LOGIN page
       Navigator.pushNamedAndRemoveUntil(
         context,

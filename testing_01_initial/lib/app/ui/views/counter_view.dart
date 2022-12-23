@@ -1,13 +1,15 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:flutter/material.dart';
 
-class CounterPage extends StatefulWidget {
-  const CounterPage({Key? key}) : super(key: key);
+class CounterView extends StatefulWidget {
+  const CounterView({super.key});
 
   @override
-  _CounterPageState createState() => _CounterPageState();
+  _CounterViewState createState() => _CounterViewState();
 }
 
-class _CounterPageState extends State<CounterPage> {
+class _CounterViewState extends State<CounterView> {
   int _counter = 0;
 
   void _increment() {
@@ -21,7 +23,7 @@ class _CounterPageState extends State<CounterPage> {
       appBar: AppBar(),
       body: Center(
         child: Text(
-          "$_counter",
+          '$_counter',
           style: const TextStyle(
             fontSize: 30,
           ),

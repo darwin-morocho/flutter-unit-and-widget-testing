@@ -1,16 +1,20 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_unit_and_widget_testing/app/ui/dialogs/dialogs.dart';
-import 'package:flutter_unit_and_widget_testing/app/ui/routes/routes.dart';
-import 'package:flutter_unit_and_widget_testing/app/utils/validator.dart';
+// ignore_for_file: library_private_types_in_public_api
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+import 'package:flutter/material.dart';
+
+import '../../utils/validator.dart';
+import '../dialogs/dialogs.dart';
+import '../dialogs/show_loader.dart';
+import '../routes/routes.dart';
+
+class LoginView extends StatefulWidget {
+  const LoginView({super.key});
 
   @override
-  _LoginPageState createState() => _LoginPageState();
+  _LoginViewState createState() => _LoginViewState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _LoginViewState extends State<LoginView> {
   final _formKey = GlobalKey<FormState>();
 
   String _email = '', _password = '';
@@ -18,6 +22,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(),
       body: SafeArea(
         child: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),
@@ -37,23 +42,23 @@ class _LoginPageState extends State<LoginPage> {
                       TextFormField(
                         onChanged: (text) => _email = text,
                         decoration: const InputDecoration(
-                          label: Text("email"),
+                          label: Text('email'),
                         ),
                         validator: (text) {
-                          if (isValidEmail(text ?? "")) {
+                          if (isValidEmail(text ?? '')) {
                             return null;
                           }
-                          return "Invalid email";
+                          return 'Invalid email';
                         },
                       ),
                       const SizedBox(height: 20),
                       TextFormField(
                         onChanged: (text) => _password = text,
                         decoration: const InputDecoration(
-                          label: Text("password"),
+                          label: Text('password'),
                         ),
                         validator: (text) {
-                          final errors = isValidPassword(text ?? "");
+                          final errors = isValidPassword(text ?? '');
                           if (errors.isEmpty) {
                             return null;
                           }
@@ -63,7 +68,7 @@ class _LoginPageState extends State<LoginPage> {
                       const SizedBox(height: 30),
                       ElevatedButton(
                         onPressed: () => _submit(context),
-                        child: const Text("SEND"),
+                        child: const Text('SEND'),
                       ),
                       const SizedBox(height: 100),
                     ],
@@ -79,23 +84,27 @@ class _LoginPageState extends State<LoginPage> {
 
   void _submit(BuildContext context) async {
     if (_formKey.currentState!.validate()) {
-      Dialogs.progress(context);
-
-      await Future.delayed(
-        const Duration(milliseconds: 1000),
+      await showLoader(
+        context,
+        Future.delayed(
+          const Duration(milliseconds: 1000),
+        ),
       );
 
-      if (_email == "test@test.com" && _password == "Test123@") {
+      if (!mounted) {
+        return;
+      }
+
+      if (_email == 'test@test.com' && _password == 'Test123@') {
         Navigator.pushNamedAndRemoveUntil(
           context,
           Routes.HOME,
           (_) => false,
         );
       } else {
-        Navigator.pop(context);
-        Dialogs.alert(
+        showAlertDialog(
           context,
-          message: "Invalid email or password",
+          message: 'Invalid email or password',
         );
       }
     }

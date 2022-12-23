@@ -18,11 +18,11 @@ List<String> isValidPassword(String text) {
     errors.remove(PasswordErrors.atLeast6Characters);
   }
 
-  if (RegExp(r"^(?=.*?[0-9])").hasMatch(text)) {
+  if (RegExp(r'^(?=.*?[0-9])').hasMatch(text)) {
     errors.remove(PasswordErrors.atLeast1Number);
   }
 
-  if (RegExp(r"^(?=.*[A-Z])").hasMatch(text)) {
+  if (RegExp(r'^(?=.*[A-Z])').hasMatch(text)) {
     errors.remove(PasswordErrors.atLeast1UpperCase);
   }
   return errors;
@@ -30,7 +30,7 @@ List<String> isValidPassword(String text) {
 
 class PasswordErrors {
   PasswordErrors._();
-  static const atLeast6Characters = "At least 6 characters";
-  static const atLeast1Number = "At least one number";
-  static const atLeast1UpperCase = "At least one upper case";
+  static const atLeast6Characters = 'At least 6 characters';
+  static const atLeast1Number = 'At least one number';
+  static const atLeast1UpperCase = 'At least one upper case';
 }
