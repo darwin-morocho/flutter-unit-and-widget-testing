@@ -1,7 +1,7 @@
-import 'dart:io';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import '../utils/platform.dart';
 
 class PlatformWidgetsView extends StatelessWidget {
   const PlatformWidgetsView({super.key});
@@ -15,14 +15,14 @@ class PlatformWidgetsView extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            if (Platform.isIOS)
+            if (isIOS)
               CupertinoButton(
-                child: const Text('Cupertino'),
+                child: const Text('ios'),
                 onPressed: () {},
               )
             else
               ElevatedButton(
-                child: const Text('Material'),
+                child: Text(isWeb ? 'web' : 'android'),
                 onPressed: () {},
               ),
           ],

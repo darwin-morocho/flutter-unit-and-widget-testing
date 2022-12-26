@@ -5,6 +5,7 @@ import '../views/counter_view.dart';
 import '../views/dropdown_view.dart';
 import '../views/home_view.dart';
 import '../views/login_view.dart';
+import '../views/menu_view.dart';
 import '../views/overflow_view.dart';
 import '../views/platform_widgets_view.dart';
 import '../views/slidable_view.dart';
@@ -13,6 +14,7 @@ import 'routes.dart';
 
 Map<String, WidgetBuilder> get appRoutes {
   return {
+    '/': (_) => const MenuView(),
     Routes.COUNTER: (_) => const CounterView(),
     Routes.PLATFORM_WIDGETS: (_) => const PlatformWidgetsView(),
     Routes.LOGIN: (_) => const LoginView(),

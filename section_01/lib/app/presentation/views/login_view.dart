@@ -40,7 +40,9 @@ class _LoginViewState extends State<LoginView> {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       TextFormField(
+                        key: const Key('input-email'),
                         onChanged: (text) => _email = text,
+                        autovalidateMode: AutovalidateMode.onUserInteraction,
                         decoration: const InputDecoration(
                           label: Text('email'),
                         ),
@@ -53,7 +55,9 @@ class _LoginViewState extends State<LoginView> {
                       ),
                       const SizedBox(height: 20),
                       TextFormField(
+                        key: const Key('input-password'),
                         onChanged: (text) => _password = text,
+                        autovalidateMode: AutovalidateMode.onUserInteraction,
                         decoration: const InputDecoration(
                           label: Text('password'),
                         ),

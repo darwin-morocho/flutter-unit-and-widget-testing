@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
 
 import 'presentation/routes/app_routes.dart';
-import 'presentation/views/menu_view.dart';
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({
+    super.key,
+    this.initialRoute,
+    this.routes,
+  });
+
+  final String? initialRoute;
+  final Map<String, WidgetBuilder>? routes;
 
   @override
   Widget build(BuildContext context) {
@@ -13,8 +19,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MenuView(),
-      routes: appRoutes,
+      initialRoute: initialRoute ?? '/',
+      routes: routes ?? appRoutes,
     );
   }
 }

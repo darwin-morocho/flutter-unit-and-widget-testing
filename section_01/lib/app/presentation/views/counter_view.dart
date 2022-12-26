@@ -24,6 +24,7 @@ class _CounterViewState extends State<CounterView> {
       appBar: AppBar(
         actions: [
           IconButton(
+            key: const Key('abc'),
             onPressed: () {
               Navigator.push(
                 context,
