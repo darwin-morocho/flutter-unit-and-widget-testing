@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite errors="0" failures="0" tests="1" skipped="0" name=".Users.darwinmorocho.Documents.flutter.flutter_unit_and_widget_testing.section_01.test.is_valid_email" timestamp="2022-12-24T17:09:57">
+    <properties>
+      <property name="platform" value="vm"/>
+    </properties>
+    <testcase classname=".Users.darwinmorocho.Documents.flutter.flutter_unit_and_widget_testing.section_01.test.is_valid_email" name="isValidEmail" time="0.033"/>
+  </testsuite>
+</testsuites>
