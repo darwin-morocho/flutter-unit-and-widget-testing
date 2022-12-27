@@ -65,8 +65,9 @@ class _SlidableViewState extends State<SlidableView> {
   }
 
   void _delete(int index) {
-    _countries.removeAt(index);
-    setState(() {});
+    setState(() {
+      _countries.removeAt(index);
+    });
   }
 }
 

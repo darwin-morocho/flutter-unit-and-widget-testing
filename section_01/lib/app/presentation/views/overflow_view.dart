@@ -16,16 +16,18 @@ class OverflowView extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: const [
-                  Text(
-                    'This is a flutter course. Add more text to '
-                    'force an overflow error',
-                    style: TextStyle(fontSize: 18),
+                  Expanded(
+                    child: Text(
+                      'This is a flutter course. Add more text to '
+                      'force an overflow error',
+                      style: TextStyle(fontSize: 18),
+                    ),
                   ),
                   SizedBox(width: 30),
                   Icon(
                     Icons.flutter_dash,
                     size: 40,
-                  )
+                  ),
                 ],
               ),
             ],

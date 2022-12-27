@@ -23,8 +23,9 @@ class _DropdownViewState extends State<DropdownView> {
           ),
           hint: const Text('select one option'),
           onChanged: (value) {
-            _value = value;
-            setState(() {});
+            setState(() {
+              _value = value;
+            });
           },
           items: [
             'yes',
